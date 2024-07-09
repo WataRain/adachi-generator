@@ -23,10 +23,9 @@ def adachify(file_name: str, bottom_text: str):
     RED = (255, 0, 0)
     WHITE = (255, 255, 255)
     original = Image.open(file_name)
-    print("original size: ", original.size)
     font_size = original.size[1]//8
-    new_size = (original.size[0], original.size[1] + font_size)
-    
+
+    new_size = (original.size[0], original.size[1] + font_size) # size of the output image
     new = Image.new(original.mode, new_size, WHITE)
     new.paste(original, (0, 0))
     draw = ImageDraw.Draw(new)
